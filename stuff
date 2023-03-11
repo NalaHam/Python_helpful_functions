@@ -1,0 +1,157 @@
+************************************************** First half of Semester *****************************************************************
+
+#expressions
+
+% called modulus gives remainders after division
+ex: 8%3 = 2 because 8/3 = 6 * (2/3)
+
+// called floor divison gives closest whole number of divison
+ex: 7//3 = 2 and 27//157890 = 0
+
+x += 3 is the same as x = x + 3 
+
+== is equal to
+!= is not equal to 
+
+32//8 == 32.0/8 is TRUE because 4 = 4.0
+
+
+#sep and end
+
+print("Hello",'World', 1)             # will print Hello World 1
+print("Hello",'World', 1, sep='_')    # will print Hello_World_1
+print("Hello",'World', 1, sep='taco') # will print HellotacoWorldtaco1
+print("Hello",'World', 1, sep='')     # will print HelloWorld1
+print("Hello",'World', 1, sep=' ')    # the default behavior
+
+
+for i in range(5):
+print(i,end="")       # will print 01234
+print()               #goes to a new line of output
+
+#Nested loops:
+#create 10 8 6 4 2 0 
+         8 6 4 2 0
+         6 4 2 0
+         4 2 0 
+         2 0
+         0
+
+for row in range(10,0,-2):
+    n = row
+    for i in range(n,0,-2):
+        print(i, " ", end = "")
+    print()
+    
+************************************************** Second half of Semester *****************************************************************
+    
+`````````````````` transforming and commands ````````````````````
+
+#List Methods:
+mylist = []
+mylist.append(5)
+mylist.append(27)
+mylist.append(3)
+mylist.append(12)
+print(mylist)             #[5, 27, 3, 12] 
+                          #used for following commands
+
+#insert
+mylist.insert(1, 12)
+print(mylist)             #[5, 12, 27, 3, 12]
+print(mylist.count(12))   #2
+
+#index
+print(mylist.index(3))    #3
+print(mylist.count(5))    #1
+
+#reverse
+mylist.reverse()
+print(mylist)             #[12, 3, 27, 12, 5]
+
+#sort
+mylist.sort()
+print(mylist)             #[3, 5, 12, 12, 27]
+
+#remove
+mylist.remove(5)
+print(mylist)             #[3, 12, 12, 27]
+
+#pop
+lastitem = mylist.pop()   
+print(lastitem)           #27
+print(mylist)             #[3, 12, 12]
+
+
+#concatenation
+#to concatenate a list, you must add a list to another
+origlist = [45,32,88]
+newlist = origlist + ['cat'] #[45,32,88, 'cat']
+
+#capitalization
+ss = "Hello, World"       #used for the following commands
+print(ss.upper())         #gives HELLO, WORLD
+print(ss.lower())         #gives hello, world
+
+
+#count
+ss = "Hello, World"
+print(ss.count("l"))      # 3
+
+#strip: Returns a string with the leading and trailing whitespace removed
+ss = "Hello, World"
+print("***"+ss.strip()+"***") # ***Hello, World***
+
+#replace: with parameters old, new. 
+ss = "Hello, World"
+print(ss.replace("o", "*")) #Hell*, W*rld
+
+
+
+#format example:
+scores = [("Rodney Dangerfield", -1), ("Marlon Brando", 1), ("You", 100)]
+for person in scores:
+    name = person[0]
+    score = person[1]
+    print("Hello {}. Your score is {}.".format(name, score))
+    
+                          #to make the formating give a float with 2 decimal places use {:.2f}
+                          #to include {} in what is printed inside the format use {{}}
+
+#appending example:
+verbs = ["kayak", "cry", "walk", "eat", "drink", "fly"]
+ing = []
+for word in verbs: 
+    ing.append(word +"ing")
+    
+print(ing)                #["kayaking", "crying", "walking", "eating", "drinking", "flying"]
+
+
+
+`````````````````` file stuff ````````````````````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
