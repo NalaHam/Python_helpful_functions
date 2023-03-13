@@ -151,11 +151,29 @@ filevariable.readline()   #Read and return the next line of the file with all te
 filevariable.readlines()  #Returns a list of strings, each representing a single line of the file. If n is not provided then all 
                           #lines of the file are returned. If n is provided then n characters are read but n is rounded up so 
                           #that an entire line is returned.
+                          #can then use a for loop to iterate through the strings in the list
+
+#split method:
+olypmicsfile = open("olypmics.txt", "r")
+
+for aline in olypmicsfile.readlines():
+    values = aline.split(",")       #for each line, split breaks the line into a list with each element being separated by a comma in the og line
+    
+    print(values[0], "is from", values[3], "and is on the roster for", values[4])
+
+olypmicsfile.close()
+
+#with statements:
+with open('mydata.txt', 'r') as md:    #instead of assigning and using for loop and then md.close()
+    lines = md.readlines()
+    for lin in lines:
+        print(lin)
 
 
-
-
-
+with open(fname, 'r') as fileref:      #for larger data
+ for lin in fileref:
+     ## some code that uses line as the current line of the file
+     ## some more code
 
 
 
