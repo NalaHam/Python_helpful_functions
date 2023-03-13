@@ -106,9 +106,13 @@ print("***"+ss.strip()+"***") # ***Hello, World***
 ss = "Hello, World"
 print(ss.replace("o", "*")) #Hell*, W*rld
 
+#split
+wrds = "Hello, world!"
+wrds_list = wrds.split(",") #gives ["Hello","world!"] 
 
 
-#format example:
+#format examples:
+#ex1
 scores = [("Rodney Dangerfield", -1), ("Marlon Brando", 1), ("You", 100)]
 for person in scores:
     name = person[0]
@@ -117,6 +121,17 @@ for person in scores:
     
                           #to make the formating give a float with 2 decimal places use {:.2f}
                           #to include {} in what is printed inside the format use {{}}
+                          
+#ex2
+inventory = ["shoes, 12, 29.99", "shirts, 20, 9.99", "sweatpants, 25, 15.00", "scarves, 13, 7.75"]
+
+for item in inventory:
+    item = item.split(",")
+    name = item[0]
+    number = item[1]
+    cost = item[2]
+    print("The store has{} {}, each for{} USD.".format(number, name, cost))
+
 
 #appending example:
 verbs = ["kayak", "cry", "walk", "eat", "drink", "fly"]
@@ -133,7 +148,7 @@ print(ing)                #["kayaking", "crying", "walking", "eating", "drinking
 #open
 open(filename,'r')        #Open a file called filename and use it for reading. This will return a reference to a file object.
 
-open(filename,'w')        #Open a file called filename and use it for writing. This will also return a reference to a file object.
+open(filename,'w')        #Open a file called filename and use it for writing. This will also create a new file with that name if one doesn't exist yet
 
 filevariable.close()      #File use is complete.
 
@@ -175,7 +190,22 @@ with open(fname, 'r') as fileref:      #for larger data
      ## some code that uses line as the current line of the file
      ## some more code
 
+#example of writing a csv file:
+olympians = [("John Aalberg", 31, "Cross Country Skiing"),
+             ("Minna Maarit Aalto", 30, "Sailing"),
+             ("Win Valdemar Aaltonen", 54, "Art Competitions"),
+             ("Wakako Abe", 18, "Cycling")]
 
+outfile = open("reduced_olympics.csv", "w")
+# output the header row
+outfile.write('Name,Age,Sport')
+outfile.write('\n')
+# output each of the rows:
+for olympian in olympians:
+    row_string = '{},{},{}'.format(olympian[0], olympian[1], olympian[2])  #to have quotation marks for each of the items use '"{}","{}","{}"'
+    outfile.write(row_string)
+    outfile.write('\n')
+outfile.close()
 
 
 
