@@ -208,8 +208,84 @@ for olympian in olympians:
 outfile.close()
 
 
+`````````````````` dictionary stuff ````````````````````
+dic = {}                           #creates an empty dictionary
+
+eng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'} #creates a dictionary
+
+print(eng2sp['two'])                #gives dos
+
+eng2sp['four'] = 'cuatro'           #adds a new varible pair to the dictionary
+
+del eng2sp['three']                 #deletes the three: tres pair in the dictionary
+
+en2sp['one'] = 1                    #resets the association in the dictionary. instead of 'one':'uno' it is 'one':1
+
+len(eng2sp)                         #counts how many associations or key-value pairs there are in the dictionary
+
+#methods
+inventory = {'apples': 430, 'bananas': 312, 'pears': 217, 'oranges': 525}
+
+#key() 
+                                    #returns a view of the keys in the dictionary
+for akey in inventory.keys():       # the order in which we get the keys is not defined
+    print("Got key", akey, "which maps to value", inventory[akey])
+
+for k in inventory:
+         print("got key", k)        #so common to iterate over keys that in a loop you don't have to use .key() to specify
+
+#values()
+for v in inventory.values():        #gives the values associated with 
+    print("Got", v)
+
+#items()
+print(list(inventory.items()))      #gives the key, value pair as list items: [('apples', 430), ('bananas', 312), ... ]
+
+for k, v in inventory.items():
+    print("Got", k, "that maps to", v)
 
 
+#lists and dictionaries: if you want to use index on a dictionary you first have to convert it to a list
+
+#seeing if a value is in a dictionary:
+
+print('apples' in inventory)        #returns True if key is in dictionary and false if it is not
+
+print(430 in inventory)             #returns False, because 430 is a value not a key
+
+print(inventory.get("cherries"))    #returns value of cherries and if it is not in the dictionary it returns None
+
+print(inventory.get("cherries",0))  #returns either the value if in the dictionary or 0 if it isn't
+
+acopy = mydict.copy()               #makes a copy of the dictionary so changes can be made to copy and not og
+
+#making a dictionary from a file
+f = open('scarlet.txt', 'r')
+txt = f.read()
+# now txt is one long string containing all the characters
+letter_counts = {} # start with an empty dictionary
+for c in txt:
+    if c not in letter_counts:      #can be replaced by: for c in txt:
+                                    #                        letter_counts[c] = letter_counts.get(c, 0) + 1
+        letter_counts[c] = 0
+
+    letter_counts[c] = letter_counts[c] + 1
+
+print("t: " + str(letter_counts['t']) + " occurrences")
+print("s: " + str(letter_counts['s']) + " occurrences")
+
+#make dic with the words and how many of them are there
+
+sentence = "The dog chased the rabbit into the forest but the rabbit was too quick."
+
+words = sentence.split(" ")
+
+word_counts = {}
+for word in words:
+    if word not in word_counts:
+        word_counts[word] = 0
+
+    word_counts[word] = word_counts[word] + 1
 
 
 
