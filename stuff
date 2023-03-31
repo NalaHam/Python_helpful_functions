@@ -36,12 +36,20 @@ print()               #goes to a new line of output
          4 2 0 
          2 0
          0
-
 for row in range(10,0,-2):
     n = row
     for i in range(n,0,-2):
         print(i, " ", end = "")
     print()
+ 
+#for loop with string example
+user_input = "something something" 
+string = ""
+rev_string = ""
+for char in user_input[::-1]:       #[x:y:z] says starting at x and ending at y-1, stepping by z
+    rev_string += char
+    
+print(rev_string)
     
 ************************************************** Second half of Semester *****************************************************************
     
@@ -87,6 +95,11 @@ print(mylist)             #[3, 12, 12]
 #to concatenate a list, you must add a list to another
 origlist = [45,32,88]
 newlist = origlist + ['cat'] #[45,32,88, 'cat']
+
+#join
+words = ["How","are","you","doing","?"]
+sentence = ' '.join(words)
+print(sentence)           #How are you doing ?
 
 #capitalization
 ss = "Hello, World"       #used for the following commands
@@ -288,9 +301,29 @@ for word in words:
     word_counts[word] = word_counts[word] + 1
 
 
+`````````````````` while loops ````````````````````
+
+Q: Request a user input an string s, use a while loop to keep looping until the value entered contains the word “stop” or “end”. 
+This should re-ask each loop.
+
+done = False
+while not done:
+    s = input("enter a word:")
+    if s == "stop" or s == "end":
+        done = True
 
 
-
+Q: define a leap year
+def is_leap_year(year):
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                return True
+            return False
+        return True
+    else:
+        return False
+    
 
 
 
