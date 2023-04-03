@@ -54,6 +54,43 @@ print(rev_string)
 ************************************************** Second half of Semester *****************************************************************
     
 `````````````````` transforming and commands ````````````````````
+#Sequences
+indexing can be used on strings, lists and tuple
+
+#Slice
+something[n:m:c] returns a list of the n index item or character through the m-1 index item or character, counting or stepping by c.
+excluding a 'n' means that it starts from the beginning. and excluding an 'm' means it goes until the end. and no c means it counts by 1.
+
+#math
+the + concetenates lists and strings. The * repeats the iteams in a list a given number of times. 
+ex: 
+fruit = ["apple", "orange","banana","cherry"]
+nums = [1,2,3]
+print(fruit + nums)      #gives ["apple", "orange","banana","cherry",1,2,3]
+print(nums*3)            #gives [1, 2, 3, 1, 2, 3, 1, 2, 3]
+
+by = "You are"
+az = "doing great"
+print(by + " " + az + "!") #gives 'You are doing great!'
+
+#Count 
+gives the number of times an argument occured in a string/list 
+ex: 
+a = "I have had an apple on my desk before!"
+print(a.count("e"))      #gives 5
+
+#Index
+returns the index number of the argument in a string/list
+bio = ["Metatarsal", "Metatarsal", "Fibula", [], "Tibia", "Tibia", 43, "Femur", "Occipital", "Metatarsal"]
+print(bio.index(43))     #gives 6
+
+#Split
+If string, the split method breaks a string into a list of words. If nothing is added to the method spaces are used as the separators.
+ex:
+song = "The rain in Spain..."
+print(song.splt())       #gives ['The', 'rain', 'in', 'Spain...']
+print(song.split("ai"))  #gives ['The r', 'n in Sp', 'n...']
+
 
 #List Methods:
 mylist = []
@@ -324,9 +361,16 @@ def is_leap_year(year):
     else:
         return False
     
+`````````````````` random stuff ````````````````````
 
+import random
 
+random.random()            #returns a random floating number N such that 0.0 <= N < 1.0
+random.randint(a,b)        #returns a random int, N, that's a <= N <= b 
+random.choice(seq)         #return a random element from the sequence seq. 
+random.shuffle(x)          #returns a sequence that is rearranged randomly
 
+https://docs.python.org/3/library/random.html
 
 
 
