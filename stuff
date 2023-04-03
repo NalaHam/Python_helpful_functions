@@ -122,6 +122,9 @@ print(mylist)             #[3, 5, 12, 12, 27]
 mylist.remove(5)
 print(mylist)             #[3, 12, 12, 27]
 
+#copy
+b = mylist[:]             #makes a copy of the list
+
 #pop(n)
 lastitem = mylist.pop()   #n is the index of what you want to delete. If it is not given it is assumed to be the last item in list. 
 print(lastitem)           #27
